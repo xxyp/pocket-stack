@@ -1,0 +1,12 @@
+{
+  "name": "@pocketstack/github-trending",
+  "version": "1.0.0",
+  "title": "GitHub 热点",
+  "description": "GitHub 热门项目抓取与素材管理",
+  "private": true,
+  "type": "module",
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
