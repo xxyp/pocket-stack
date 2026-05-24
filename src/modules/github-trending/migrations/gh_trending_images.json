@@ -1,0 +1,24 @@
+[
+  {
+    "id": "pbc_4857263011",
+    "listRule": "",
+    "viewRule": "",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "name": "gh_trending_images",
+    "type": "base",
+    "fields": [
+      { "autogeneratePattern": "[a-z0-9]{15}", "hidden": false, "id": "text3208210256", "max": 15, "min": 15, "name": "id", "pattern": "^[a-z0-9]+$", "presentable": false, "primaryKey": true, "required": true, "system": true, "type": "text" },
+      { "hidden": false, "id": "relation3748291011", "maxSelect": 1, "name": "project", "presentable": false, "required": true, "system": false, "type": "relation", "collectionId": "pbc_3748291011" },
+      { "hidden": false, "id": "url4857263012", "name": "image_url", "presentable": false, "required": true, "system": false, "type": "url" },
+      { "autogeneratePattern": "", "hidden": false, "id": "text4857263013", "max": 0, "min": 0, "name": "alt_text", "pattern": "", "presentable": false, "primaryKey": false, "required": false, "system": false, "type": "text" },
+      { "autogeneratePattern": "", "hidden": false, "id": "text4857263014", "max": 0, "min": 0, "name": "source", "pattern": "", "presentable": false, "primaryKey": false, "required": false, "system": false, "type": "text" },
+      { "hidden": false, "id": "bool4857263015", "name": "is_cover", "presentable": false, "required": false, "system": false, "type": "bool" },
+      { "hidden": false, "id": "autodate_created", "name": "created", "onCreate": true, "onUpdate": false, "presentable": false, "system": false, "type": "autodate" },
+      { "hidden": false, "id": "autodate_updated", "name": "updated", "onCreate": true, "onUpdate": true, "presentable": false, "system": false, "type": "autodate" }
+    ],
+    "indexes": [],
+    "system": false
+  }
+]

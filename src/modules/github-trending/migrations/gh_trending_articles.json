@@ -1,0 +1,25 @@
+[
+  {
+    "id": "pbc_3847562011",
+    "listRule": "",
+    "viewRule": "",
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "name": "gh_trending_articles",
+    "type": "base",
+    "fields": [
+      { "autogeneratePattern": "[a-z0-9]{15}", "hidden": false, "id": "text3208210256", "max": 15, "min": 15, "name": "id", "pattern": "^[a-z0-9]+$", "presentable": false, "primaryKey": true, "required": true, "system": true, "type": "text" },
+      { "hidden": false, "id": "relation3748291011", "maxSelect": 1, "name": "project", "presentable": false, "required": true, "system": false, "type": "relation", "collectionId": "pbc_3748291011" },
+      { "autogeneratePattern": "", "hidden": false, "id": "text1579384327", "max": 0, "min": 0, "name": "title", "pattern": "", "presentable": false, "primaryKey": false, "required": true, "system": false, "type": "text" },
+      { "hidden": false, "id": "url3847561924", "name": "url", "presentable": false, "required": true, "system": false, "type": "url" },
+      { "autogeneratePattern": "", "hidden": false, "id": "text3857461923", "max": 0, "min": 0, "name": "snippet", "pattern": "", "presentable": false, "primaryKey": false, "required": false, "system": false, "type": "text" },
+      { "autogeneratePattern": "", "hidden": false, "id": "text4857362910", "max": 0, "min": 0, "name": "content", "pattern": "", "presentable": false, "primaryKey": false, "required": false, "system": false, "type": "text" },
+      { "autogeneratePattern": "", "hidden": false, "id": "text4857362911", "max": 0, "min": 0, "name": "source", "pattern": "", "presentable": false, "primaryKey": false, "required": false, "system": false, "type": "text" },
+      { "hidden": false, "id": "autodate_created", "name": "created", "onCreate": true, "onUpdate": false, "presentable": false, "system": false, "type": "autodate" },
+      { "hidden": false, "id": "autodate_updated", "name": "updated", "onCreate": true, "onUpdate": true, "presentable": false, "system": false, "type": "autodate" }
+    ],
+    "indexes": [],
+    "system": false
+  }
+]
