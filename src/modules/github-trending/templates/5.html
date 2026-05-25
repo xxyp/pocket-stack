@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub Share Card Template 5</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#42f099",
+                "clay-white": "#f0f4f8",
+                "clay-mint": "#e0f7ef",
+                "clay-lavender": "#eef2ff",
+                "clay-peach": "#fff1eb",
+            },
+            fontFamily: {
+                "display": ["Spline Sans", "Noto Sans SC", "sans-serif"]
+            },
+            boxShadow: {
+                "clay-card": "12px 12px 24px rgba(170, 180, 190, 0.4), -12px -12px 24px rgba(255, 255, 255, 1), inset -4px -4px 8px rgba(170, 180, 190, 0.1), inset 4px 4px 8px rgba(255, 255, 255, 0.8)",
+                "clay-pill": "6px 6px 12px rgba(170, 180, 190, 0.3), -6px -6px 12px rgba(255, 255, 255, 1), inset 2px 2px 4px rgba(255, 255, 255, 0.8), inset -2px -2px 4px rgba(0, 0, 0, 0.05)",
+                "clay-convex": "inset 4px 4px 8px rgba(255, 255, 255, 1), inset -4px -4px 8px rgba(0, 0, 0, 0.05), 8px 8px 16px rgba(170, 180, 190, 0.2)",
+            }
+        },
+    },
+}
+</script>
+</head>
+<body class="m-0 p-0 font-display">
+<div id="card" class="relative w-[380px] aspect-[3/4] flex flex-col items-center justify-center rounded-[2.5rem] p-6 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 border border-white/40">
+    <div class="absolute top-[-20px] left-[-20px] w-32 h-32 bg-primary/20 rounded-full blur-2xl"></div>
+    <div class="absolute bottom-[-20px] right-[-20px] w-40 h-40 bg-purple-300/20 rounded-full blur-2xl"></div>
+
+    <div class="relative z-10 w-full flex-1 flex flex-col bg-clay-white rounded-[2.5rem] shadow-clay-card p-6 overflow-hidden">
+        <div class="absolute top-4 left-4 w-3/4 h-3/4 bg-gradient-to-br from-white/80 to-transparent rounded-full opacity-40 blur-xl pointer-events-none"></div>
+
+        <div class="relative flex justify-center -mt-12 mb-4">
+            <div class="relative p-2 rounded-full bg-clay-white shadow-clay-pill">
+                <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-clay-white shadow-inner flex items-center justify-center bg-gradient-to-br from-primary/20 to-purple-200">
+                    <span class="text-4xl font-bold text-[#2d3748]">{{firstName}}</span>
+                </div>
+                <div class="absolute bottom-2 right-2 w-6 h-6 bg-primary rounded-full border-2 border-white shadow-sm flex items-center justify-center">
+                    <span class="text-white text-xs font-bold">#{{rank}}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center text-center mb-6 z-10">
+            <h1 class="text-[#2d3748] text-2xl font-bold tracking-tight mb-1">{{owner}} / {{name}}</h1>
+            <div class="flex items-center gap-1.5 opacity-70">
+                <span class="material-symbols-outlined text-sm text-[#4c9a73]">trending_up</span>
+                <span class="text-[#4c9a73] text-xs font-medium uppercase tracking-wide">Trending</span>
+            </div>
+        </div>
+
+        <div class="flex-1 flex flex-col items-center justify-start text-center mb-6 z-10 relative">
+            <div class="bg-[#eef2f6] rounded-2xl p-4 shadow-[inset_2px_2px_5px_rgba(0,0,0,0.05),inset_-2px_-2px_5px_rgba(255,255,255,1)] w-full">
+                <p class="text-slate-600 text-[15px] font-medium leading-relaxed line-clamp-3">
+                    {{description}}
+                </p>
+            </div>
+        </div>
+
+        <div class="flex justify-center mb-6 z-10">
+            <div class="flex items-center gap-2 px-4 py-2 bg-clay-mint rounded-full shadow-clay-pill text-[#0f5132]">
+                <span class="w-3 h-3 rounded-full shadow-[0_0_8px]" style="background-color: {{languageColor}}; box-shadow: 0 0 8px {{languageColor}};"></span>
+                <span class="text-sm font-bold">{{language}}</span>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-3 w-full mt-auto z-10">
+            <div class="flex flex-col items-center justify-center flex-1 h-20 bg-clay-white rounded-2xl shadow-clay-convex">
+                <span class="material-symbols-outlined text-amber-400 mb-1" style="font-variation-settings: 'FILL' 1;">star</span>
+                <span class="text-slate-700 font-bold text-sm">{{stars}}</span>
+                <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Stars</span>
+            </div>
+
+            <div class="flex flex-col items-center justify-center flex-1 h-20 bg-clay-lavender rounded-2xl shadow-clay-convex">
+                <span class="material-symbols-outlined text-purple-400 mb-1" style="font-variation-settings: 'FILL' 1;">call_split</span>
+                <span class="text-slate-700 font-bold text-sm">{{forks}}</span>
+                <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Forks</span>
+            </div>
+
+            <div class="flex flex-col items-center justify-center flex-1 h-20 bg-clay-peach rounded-2xl shadow-clay-convex">
+                <span class="material-symbols-outlined text-green-400 mb-1">trending_up</span>
+                <span class="text-slate-700 font-bold text-sm">{{todayStars}}</span>
+                <span class="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Today</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

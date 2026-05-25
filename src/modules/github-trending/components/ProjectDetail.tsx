@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { toast } from 'sonner';
+import { CardTemplates } from './CardTemplates';
 import {
   ArrowLeftIcon,
   StarIcon,
@@ -15,6 +16,7 @@ import {
   BookOpenIcon,
   PhotoIcon,
   PencilSquareIcon,
+  RectangleGroupIcon,
 } from '@heroicons/react/24/outline';
 
 interface Project {
@@ -251,6 +253,10 @@ export function ProjectDetail() {
             <PhotoIcon className="h-4 w-4 mr-2" />
             图片素材 ({images.length})
           </TabsTrigger>
+          <TabsTrigger value="cards">
+            <RectangleGroupIcon className="h-4 w-4 mr-2" />
+            卡片
+          </TabsTrigger>
           <TabsTrigger value="notes">笔记</TabsTrigger>
         </TabsList>
 
@@ -324,6 +330,10 @@ export function ProjectDetail() {
               ))}
             </div>
           )}
+        </TabsContent>
+
+        <TabsContent value="cards" className="mt-4">
+          <CardTemplates project={project} />
         </TabsContent>
 
         <TabsContent value="notes" className="mt-4">

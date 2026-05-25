@@ -27,3 +27,7 @@ cache
 
 .private/
 __pycache__/
+
+# Scraper API runtime config
+server/schedule-config.json
+server/sample*.html

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub Share Card Template 13</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=VT323&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#0df20d",
+                "primary-dim": "#087008",
+            },
+            fontFamily: {
+                "display": ["Space Grotesk", "Noto Sans SC", "sans-serif"],
+                "pixel": ["'VT323'", "monospace"],
+            },
+        },
+    },
+}
+</script>
+<style>
+.text-glow {
+    text-shadow: 0 0 4px rgba(13, 242, 13, 0.6), 0 0 8px rgba(13, 242, 13, 0.3);
+}
+.box-glow {
+    box-shadow: 0 0 10px rgba(13, 242, 13, 0.2), inset 0 0 10px rgba(13, 242, 13, 0.1);
+}
+.scanline-overlay {
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+    background-size: 100% 4px;
+    pointer-events: none;
+}
+.cursor-blink {
+    animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+</style>
+</head>
+<body class="m-0 p-0 font-display">
+<div id="card" class="relative w-[380px] aspect-[3/4] bg-black rounded-sm border-4 border-[#1a1a1a] overflow-hidden">
+    <div class="absolute inset-0 z-20 scanline-overlay opacity-60 pointer-events-none"></div>
+    <div class="absolute inset-0 z-20 bg-[radial-gradient(circle,rgba(13,242,13,0.03)_0%,rgba(0,0,0,0.6)_100%)] pointer-events-none"></div>
+
+    <div class="relative z-10 w-full h-full p-5 flex flex-col font-pixel text-primary tracking-wide leading-none justify-between border-[6px] border-double border-primary/40 m-1 box-border h-[calc(100%-8px)] w-[calc(100%-8px)] bg-[#081008]">
+        <div class="space-y-4">
+            <div class="flex justify-between items-end border-b-2 border-primary/50 pb-2 border-dashed">
+                <span class="text-xl">GITHUB_NET v2.0</span>
+                <span class="text-lg">#{{rank}}</span>
+            </div>
+
+            <div class="space-y-2 mt-4">
+                <h1 class="text-2xl text-white text-glow break-all leading-relaxed">{{owner}}/{{name}}</h1>
+                <div class="text-xl text-primary/80 mt-2 leading-6 h-20 overflow-hidden relative line-clamp-3">
+                    <span class="text-white">&gt;</span> {{description}}<span class="cursor-blink bg-primary text-black inline-block w-3 h-5 align-middle ml-1"> </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3 mt-auto">
+            <div class="border-2 border-primary bg-black/40 p-2 flex flex-col items-center justify-center gap-1 box-glow">
+                <span class="material-symbols-outlined text-2xl">star</span>
+                <span class="text-xs text-primary/70">STARS</span>
+                <span class="text-2xl font-bold text-white">{{stars}}</span>
+            </div>
+
+            <div class="border-2 border-primary bg-black/40 p-2 flex flex-col items-center justify-center gap-1 box-glow">
+                <span class="material-symbols-outlined text-2xl">call_split</span>
+                <span class="text-xs text-primary/70">FORKS</span>
+                <span class="text-2xl font-bold text-white">{{forks}}</span>
+            </div>
+
+            <div class="col-span-2 border-2 border-primary bg-primary/10 p-2 flex items-center justify-between px-4">
+                <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full" style="background-color: {{languageColor}};"></span>
+                    <span class="text-lg">LANG:</span>
+                </div>
+                <span class="text-xl font-bold text-white bg-primary/20 px-2">[ {{language}} ]</span>
+            </div>
+        </div>
+
+        <div class="mt-4 pt-3 border-t-2 border-dashed border-primary/50 text-center">
+            <p class="text-lg text-primary/60 mb-1">TODAY'S ACTIVITY</p>
+            <p class="text-yellow-400 text-lg text-glow">{{todayStars}} STARS</p>
+        </div>
+
+        <div class="absolute bottom-1 right-2 text-[10px] text-primary/30 rotate-0">
+            gh-card.exe
+        </div>
+    </div>
+</div>
+</body>
+</html>

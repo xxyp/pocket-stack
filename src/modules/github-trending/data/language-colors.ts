@@ -1,0 +1,38 @@
+export const LANGUAGE_COLORS: Record<string, string> = {
+  typescript: '#3178c6',
+  javascript: '#f1e05a',
+  python: '#3572A5',
+  go: '#00ADD8',
+  rust: '#dea584',
+  java: '#b07219',
+  c: '#555555',
+  'c++': '#f34b7d',
+  'c#': '#178600',
+  php: '#4F5D95',
+  ruby: '#701516',
+  swift: '#F05138',
+  kotlin: '#A97BFF',
+  dart: '#00B4AB',
+  scala: '#c22d40',
+  shell: '#89e051',
+  html: '#e34c26',
+  css: '#563d7c',
+  vue: '#41b883',
+  svelte: '#ff3e00',
+  lua: '#000080',
+  perl: '#0298c3',
+  haskell: '#5e5086',
+  elixir: '#4e2a59',
+  clojure: '#db5855',
+  zig: '#ec915c',
+  solidity: '#AA6746',
+  'objective-c': '#438eff',
+  r: '#198CE7',
+  makefile: '#427819',
+  tex: '#3D6117',
+  powershell: '#012456',
+};
+
+export function getLanguageColor(language: string): string {
+  return LANGUAGE_COLORS[language.toLowerCase()] || '#858585';
+}

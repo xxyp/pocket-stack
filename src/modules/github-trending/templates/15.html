@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub Share Card Template 15</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#135bec",
+                "ide-bg": "#1e293b",
+                "ide-header": "#0f172a",
+                "syntax-keyword": "#c084fc",
+                "syntax-string": "#4ade80",
+                "syntax-func": "#60a5fa",
+                "syntax-comment": "#64748b",
+                "syntax-number": "#fbbf24",
+            },
+            fontFamily: {
+                "display": ["Space Grotesk", "monospace"],
+            },
+        },
+    },
+}
+</script>
+</head>
+<body class="m-0 p-0 font-display">
+<div id="card" class="relative w-[380px] aspect-[3/4] bg-ide-bg rounded-xl flex flex-col overflow-hidden ring-1 ring-white/10">
+    <div class="h-10 bg-ide-header border-b border-white/5 flex items-center px-4 justify-between shrink-0">
+        <div class="flex gap-2">
+            <div class="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+            <div class="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+        </div>
+        <div class="text-gray-500 text-xs font-medium tracking-wide flex items-center gap-1">
+            <span class="material-symbols-outlined text-[14px]">terminal</span>
+            bash - #{{rank}}
+        </div>
+        <div class="w-12"></div>
+    </div>
+
+    <div class="flex-1 p-4 overflow-hidden relative flex flex-col font-mono text-sm leading-6">
+        <div class="absolute inset-0 pointer-events-none opacity-5 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px]"></div>
+
+        <div class="relative z-10 flex flex-col gap-1 h-full">
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">1</span>
+                <div class="break-all">
+                    <span class="text-syntax-string font-bold">➜</span>
+                    <span class="text-syntax-func font-bold">~</span>
+                    <span class="text-white"> git remote show origin</span>
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">2</span>
+                <div class="text-gray-500 text-xs sm:text-sm break-all">
+                    Fetch URL: github.com/{{owner}}/{{name}}
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">3</span>
+                <div> </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">4</span>
+                <div>
+                    <span class="text-syntax-keyword">export const</span>
+                    <span class="text-syntax-number"> REPO</span>
+                    <span class="text-white">=</span>
+                    <span class="text-syntax-string">"{{name}}"</span><span class="text-white">;</span>
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">5</span>
+                <div class="text-syntax-comment italic line-clamp-2">
+                    // {{description}}
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">6</span>
+                <div> </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">7</span>
+                <div>
+                    <span class="text-syntax-keyword">const</span>
+                    <span class="text-syntax-func"> stats</span>
+                    <span class="text-white">= {</span>
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">8</span>
+                <div class="pl-4">
+                    <span class="text-syntax-func">"stars"</span>:
+                    <span class="text-syntax-number">{{stars}}</span>,
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">9</span>
+                <div class="pl-4">
+                    <span class="text-syntax-func">"forks"</span>:
+                    <span class="text-syntax-number">{{forks}}</span>,
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">10</span>
+                <div class="pl-4">
+                    <span class="text-syntax-func">"lang"</span>:
+                    <span class="text-syntax-string">"{{language}}"</span>,
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">11</span>
+                <div class="pl-4">
+                    <span class="text-syntax-func">"today"</span>:
+                    <span class="text-syntax-string">"{{todayStars}}"</span>
+                </div>
+            </div>
+
+            <div class="flex items-start">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">12</span>
+                <div class="text-white">};</div>
+            </div>
+
+            <div class="flex items-start mt-auto">
+                <span class="text-gray-600 select-none mr-4 text-xs pt-1 w-4 text-right">13</span>
+                <div>
+                    <span class="text-syntax-keyword">return</span>
+                    <span class="text-white"> process.</span><span class="text-syntax-func">exit</span><span class="text-white">(</span><span class="text-syntax-number">0</span><span class="text-white">);</span>
+                    <span class="inline-block w-2.5 h-5 bg-primary ml-1 align-text-bottom animate-pulse"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-primary/10 h-8 flex items-center px-4 justify-between border-t border-white/5 text-[10px] uppercase tracking-wider text-primary font-bold">
+        <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            Running
+        </div>
+        <div>UTF-8</div>
+        <div>{{language}}</div>
+    </div>
+</div>
+</body>
+</html>

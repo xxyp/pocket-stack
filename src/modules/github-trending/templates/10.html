@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="dark" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub Share Card Template 10</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Noto+Sans+SC:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#d41132",
+            },
+            fontFamily: {
+                "display": ["Newsreader", "Noto Sans SC", "serif"],
+                "sans": ["Noto Sans SC", "sans-serif"]
+            },
+        },
+    },
+}
+</script>
+<style>
+.barcode-stripes {
+    background: repeating-linear-gradient(90deg, #fff 0px, #fff 2px, transparent 2px, transparent 4px, #fff 4px, #fff 5px, transparent 5px, transparent 7px, #fff 7px, #fff 10px, transparent 10px, transparent 12px);
+}
+</style>
+</head>
+<body class="m-0 p-0 font-display">
+<div id="card" class="relative w-[380px] aspect-[3/4] overflow-hidden bg-[#1a0b0d]">
+    <div class="absolute inset-0 z-0">
+        <div class="w-full h-full bg-gradient-to-br from-[#2a1015] to-[#0a0505]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#221013]/40 via-transparent to-[#221013]/90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+    </div>
+
+    <div class="relative z-10 h-full flex flex-col justify-between p-6">
+        <div class="flex flex-col items-center border-b border-white/20 pb-4">
+            <div class="flex items-center justify-between w-full mb-1">
+                <span class="text-[10px] font-sans font-bold tracking-[0.3em] text-white/70 uppercase">Open Source Monthly</span>
+                <span class="text-[10px] font-sans font-bold tracking-[0.3em] text-primary uppercase">#{{rank}} Trending</span>
+            </div>
+            <h1 class="text-5xl font-black italic tracking-tighter text-white drop-shadow-lg text-center leading-[0.85] mt-2">
+                GITHUB
+            </h1>
+        </div>
+
+        <div class="flex flex-col flex-grow justify-center py-4">
+            <div class="self-start bg-primary text-white px-3 py-1 text-xs font-bold font-sans tracking-widest uppercase mb-4 shadow-lg transform -rotate-2">
+                Featured
+            </div>
+
+            <h2 class="text-6xl font-display font-light text-white leading-[0.9] tracking-tight mb-2">
+                {{name}}<span class="text-primary">.</span>
+            </h2>
+
+            <p class="text-xl text-gray-300 font-display italic leading-snug max-w-[85%] border-l-2 border-primary pl-4 my-4 line-clamp-3">
+                "{{description}}"
+            </p>
+
+            <div class="flex items-center gap-2 mt-2">
+                <span class="material-symbols-outlined text-primary text-sm">verified</span>
+                <p class="text-sm font-sans text-gray-400 uppercase tracking-widest">Curated by {{owner}}</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-x-6 gap-y-6 items-end pb-2">
+            <div class="cursor-default">
+                <div class="h-[1px] w-8 bg-primary mb-2"></div>
+                <h3 class="text-3xl font-bold text-white leading-none">{{stars}}</h3>
+                <p class="text-[10px] uppercase tracking-[0.2em] font-sans text-gray-400 mt-1">Stargazers</p>
+            </div>
+
+            <div class="cursor-default">
+                <div class="h-[1px] w-8 bg-primary mb-2"></div>
+                <h3 class="text-3xl font-bold text-white leading-none">{{forks}}</h3>
+                <p class="text-[10px] uppercase tracking-[0.2em] font-sans text-gray-400 mt-1">Forks</p>
+            </div>
+
+            <div class="col-span-2 flex items-center justify-between border-t border-white/10 pt-4 mt-2">
+                <div>
+                    <p class="text-[10px] uppercase tracking-[0.2em] font-sans text-primary mb-1">Language</p>
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full" style="background-color: {{languageColor}};"></span>
+                        <p class="text-2xl font-display italic text-white">{{language}}</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-end opacity-80">
+                    <div class="w-24 h-8 barcode-stripes mix-blend-screen"></div>
+                    <span class="text-[8px] font-sans text-white tracking-[0.3em] mt-1">{{todayStars}} TODAY</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="light" lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>GitHub Share Card Template 18</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script>
+tailwind.config = {
+    theme: {
+        extend: {
+            colors: {
+                "primary": "#2060df",
+            },
+            fontFamily: {
+                "display": ["Manrope", "Noto Sans SC", "sans-serif"]
+            },
+        },
+    },
+}
+</script>
+<style>
+.material-symbols-outlined.thin {
+    font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+}
+</style>
+</head>
+<body class="m-0 p-0 font-display">
+<div id="card" class="relative w-[380px] aspect-[3/4] bg-white shadow-[0_20px_50px_-12px_rgba(0,0,0,0.15)] rounded-sm overflow-hidden flex flex-col justify-between p-8 border border-gray-100">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-blue-50/50 to-transparent rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none opacity-60"></div>
+
+    <div class="relative z-10 flex items-center gap-3 opacity-90">
+        <div class="size-8 rounded-full bg-gray-100 overflow-hidden shadow-inner flex items-center justify-center">
+            <span class="text-lg font-bold text-gray-600">{{firstName}}</span>
+        </div>
+        <span class="text-gray-500 font-display text-xs font-bold tracking-[0.2em] uppercase">{{owner}}</span>
+        <span class="ml-auto text-xs text-primary font-bold">#{{rank}}</span>
+    </div>
+
+    <div class="relative z-10 flex-1 flex flex-col justify-center items-start mt-4">
+        <h1 class="text-gray-900 text-5xl font-light tracking-tighter leading-[0.9] mb-6">
+            {{name}}<span class="text-primary">.</span>
+        </h1>
+
+        <div class="pl-4 border-l border-gray-200">
+            <p class="text-gray-500 text-sm font-medium leading-relaxed max-w-[200px] line-clamp-4">
+                {{description}}
+            </p>
+        </div>
+    </div>
+
+    <div class="relative z-10 pt-6 border-t border-gray-100 flex items-end justify-between">
+        <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined thin text-gray-400 text-xl">star</span>
+                <div class="flex flex-col">
+                    <span class="text-gray-900 text-xl font-light leading-none">{{stars}}</span>
+                    <span class="text-gray-400 text-[10px] uppercase tracking-wider font-semibold mt-0.5">Stars</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined thin text-gray-400 text-xl">call_split</span>
+                <div class="flex flex-col">
+                    <span class="text-gray-900 text-xl font-light leading-none">{{forks}}</span>
+                    <span class="text-gray-400 text-[10px] uppercase tracking-wider font-semibold mt-0.5">Forks</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-end gap-2">
+            <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full" style="background-color: {{languageColor}};"></span>
+                <span class="text-gray-600 text-sm font-medium">{{language}}</span>
+            </div>
+            <div class="flex items-center gap-1 text-green-600">
+                <span class="material-symbols-outlined thin text-sm">trending_up</span>
+                <span class="text-xs font-bold">{{todayStars}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
